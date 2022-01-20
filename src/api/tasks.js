@@ -9,13 +9,13 @@ export const indexTasks = (user) => {
   })
 }
 
-// export const showTask = (id, user) => {
-//   return axios.get(`${apiUrl}/tasks/${id}`, {
-//     headers: {
-//       Authorization: `Bearer ${user.token}`
-//     }
-//   })
-// }
+export const showTask = (id, user) => {
+  return axios.get(`${apiUrl}/tasks/${id}`, {
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
 
 export const deleteTask = (id, user) => {
   return axios.delete(`${apiUrl}/tasks/${id}`, {
