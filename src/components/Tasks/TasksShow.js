@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import { Spinner } from 'react-bootstrap'
 import { indexTasks } from '../../api/tasks'
@@ -8,7 +8,7 @@ const TasksShow = ({ user, msgAlert }) => {
   const [tasks, setTasks] = useState(null)
 
   if (!user) {
-    return <Navigate to='/' />
+    return <Redirect to='/' />
   }
 
   useEffect(() => {

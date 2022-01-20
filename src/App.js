@@ -10,6 +10,11 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import TasksShow from './components/Tasks/TasksShow'
+import TaskCreate from './components/Tasks/TaskCreate'
+import TaskUpdate from './components/Tasks/TaskUpdate'
+import TaskHome from './components/Tasks/TaskHome'
+import TaskDelete from './components/Tasks/TaskDelete'
 
 class App extends Component {
   constructor (props) {
@@ -56,6 +61,13 @@ class App extends Component {
           />
         ))}
 	      <main className='container'>
+
+	        <Route
+            path='/'
+            render={() => (
+              <TaskHome />
+            )}
+          />
 	        <Route
             path='/sign-up'
             render={() => (
@@ -84,6 +96,34 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/tasks'
+            render={() => (
+              <TasksShow msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/tasks/create'
+            render={() => (
+              <TaskCreate msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/tasks/:id'
+            render={() => (
+              <TaskUpdate msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/tasks/:id'
+            render={() => (
+              <TaskDelete msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>

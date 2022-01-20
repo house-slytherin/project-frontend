@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 // Import MovieForm:
 import TaskForm from './TaskForm'
@@ -17,15 +17,16 @@ const TaskCreate = ({ user, msgAlert }) => {
     try {
       const res = await createTask(title, description, date, user)
       setCreatedId(res.data.task._id)
+      console.log(res.data.task._id)
 
       msgAlert({
-        heading: 'Movie Created',
+        heading: 'Task Created',
         message: `Created ${title} successfully.`,
         variant: 'success'
       })
     } catch (error) {
       msgAlert({
-        heading: 'Failed to create movie',
+        heading: 'Failed to create task',
         message: error.message,
         variant: 'danger'
       })
@@ -34,15 +35,15 @@ const TaskCreate = ({ user, msgAlert }) => {
 
   // if user is null, redirect to home page
   if (!user) {
-    return <Navigate to='/' />
+    return <Redirect to='/' />
   } else if (createdId) {
-    // if movie has been created,Navigate to the 'show' page
-    return <Navigate to={`/tasks/${createdId}`} />
+    // if movie has been created,Redirect to the 'show' page
+    return <Redirect to={`/tasks/${createdId}`} />
   }
   return (
     <div className='row'>
       <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-        <h3>Create Movie</h3>
+        <h3>Create Task</h3>
         <TaskForm
           handleSubmit={handleSubmit}
           title={title}

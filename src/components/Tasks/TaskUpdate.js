@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Navigate, useParams } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 
 import TaskForm from './TaskForm'
 import { showTask, updateTask } from '../../api/tasks'
@@ -14,7 +14,7 @@ const TaskUpdate = ({ user, msgAlert }) => {
   // if user is null, redirect to home page
   // Note: Must check before useEffect, since it needs user
   if (!user) {
-    return <Navigate to='/' />
+    return <Redirect to='/' />
   }
 
   useEffect(() => {
@@ -54,8 +54,8 @@ const TaskUpdate = ({ user, msgAlert }) => {
   }
 
   if (updated) {
-    // Navigate to the 'show' page
-    return <Navigate to={`/task/${id}`} />
+    // Redirect to the 'show' page
+    return <Redirect to={`/tasks/${id}`} />
   }
 
   return (
@@ -67,6 +67,9 @@ const TaskUpdate = ({ user, msgAlert }) => {
           title={title}
           description={description}
           date={date}
+          setTitle={setTitle}
+          setDescription={setDescription}
+          setDate={setDate}
         />
       </div>
     </div>

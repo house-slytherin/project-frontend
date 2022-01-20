@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, Redirect, useParams } from 'react-router-dom'
 import { Spinner, Button } from 'react-bootstrap'
 
 import { deleteTask, showTask } from '../../api/tasks'
@@ -12,7 +12,7 @@ const TaskDelete = ({ user, msgAlert }) => {
   // if user is null, redirect to home page
   // Note: Must check before useEffect, since it needs user
   if (!user) {
-    return <Navigate to='/' />
+    return <Redirect to='/' />
   }
 
   useEffect(() => {
@@ -56,14 +56,14 @@ const TaskDelete = ({ user, msgAlert }) => {
       </Spinner>
     )
   } else if (deleted) {
-    return <Navigate to='/tasks' />
+    return <Redirect to='/tasks' />
   } else {
     // We have a Task, display it!
     return (
       <div className='row'>
         <div className='col-sm-10 col-md-8 mx-auto mt-5'>
           <h3>{task.title}</h3>
-          <p>Director: {task.director}</p>
+          <p>Description: {task.description}</p>
           <Button variant='danger' onClick={handleDeleteClick}>Delete Task</Button>
           <Link to={`/tasks/${id}/edit`}>
             <Button variant='primary' type='submit'>Update Task</Button>
