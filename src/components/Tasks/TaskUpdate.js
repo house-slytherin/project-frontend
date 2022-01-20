@@ -46,7 +46,7 @@ const TaskUpdate = ({ user, msgAlert }) => {
       setUpdated(true)
     } catch (error) {
       msgAlert({
-        heading: 'Failed to update movie',
+        heading: 'Failed to update task',
         message: error.message,
         variant: 'danger'
       })
