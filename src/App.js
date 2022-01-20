@@ -1,6 +1,6 @@
 /* eslint-disable no-tabs */
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
@@ -98,32 +98,36 @@ class App extends Component {
               <ChangePassword msgAlert={this.msgAlert} user={user} />
             )}
           />
-          <AuthenticatedRoute
-            user={user}
-            path='/tasks'
-            render={() => (
-              <TasksShow msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/tasks/create'
-            render={() => (
-              <TaskCreate msgAlert={this.msgAlert} user={user} />
-            )}
-          />
+          <Switch>
+            <AuthenticatedRoute
+              user={user}
+              path='/tasks/create'
+              render={() => (
+                <TaskCreate msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+            <AuthenticatedRoute
+              user={user}
+              path='/tasks/:id'
+              render={() => (
+                <TaskDelete msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+
+            <AuthenticatedRoute
+              user={user}
+              path='/tasks'
+              render={() => (
+                <TasksShow msgAlert={this.msgAlert} user={user} />
+              )}
+            />
+
+          </Switch>
           <AuthenticatedRoute
             user={user}
             path='/tasks/:id/edit'
             render={() => (
               <TaskUpdate msgAlert={this.msgAlert} user={user} />
-            )}
-          />
-          <AuthenticatedRoute
-            user={user}
-            path='/tasks/:id'
-            render={() => (
-              <TaskDelete msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>
