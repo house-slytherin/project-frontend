@@ -27,6 +27,7 @@ const TaskForm = ({ handleSubmit, title, description, date, setTitle, setDescrip
       <Form.Label>Date</Form.Label>
       <Form.Control
         placeholder='Pick a Date'
+        type='date'
         name='date'
         value={date}
         onChange={event => setDate(event.target.value)}
