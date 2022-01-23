@@ -8,6 +8,7 @@ const TaskUpdate = ({ user, msgAlert }) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [date, setDate] = useState('')
+  const [completed, setCompleted] = useState(false)
   const [updated, setUpdated] = useState(false)
   const { id } = useParams()
 
@@ -27,6 +28,7 @@ const TaskUpdate = ({ user, msgAlert }) => {
         setTitle(res.data.task.title)
         setDescription(res.data.task.description)
         setDate(res.data.task.date)
+        setCompleted(res.data.task.completed)
       } catch (error) {
         msgAlert({
           heading: 'Failed to load task',
@@ -42,7 +44,7 @@ const TaskUpdate = ({ user, msgAlert }) => {
     event.preventDefault()
 
     try {
-      await updateTask(id, title, description, date, user)
+      await updateTask(id, title, description, date, completed, user)
       setUpdated(true)
     } catch (error) {
       msgAlert({

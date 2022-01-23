@@ -25,10 +25,10 @@ export const deleteTask = (id, user) => {
   })
 }
 
-export const updateTask = (id, title, description, date, user) => {
+export const updateTask = (id, title, description, date, completed, user) => {
   return axios.patch(
     `${apiUrl}/tasks/${id}`,
-    { task: { title, description, date } },
+    { task: { title, description, date, completed } },
     {
       headers: {
         Authorization: `Bearer ${user.token}`

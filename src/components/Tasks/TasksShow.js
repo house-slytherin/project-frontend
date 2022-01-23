@@ -12,20 +12,20 @@ const TasksShow = ({ user, msgAlert }) => {
     return <Redirect to='/' />
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await indexTasks(user)
-        setTasks(res.data.tasks)
-      } catch (error) {
-        msgAlert({
-          heading: 'Tasks List failed to load',
-          message: error.message,
-          variant: 'danger'
-        })
-      }
+  const fetchTasks = async () => {
+    try {
+      const res = await indexTasks(user)
+      setTasks(res.data.tasks)
+    } catch (error) {
+      msgAlert({
+        heading: 'Tasks List failed to load',
+        message: error.message,
+        variant: 'danger'
+      })
     }
-    fetchData()
+  }
+  useEffect(() => {
+    fetchTasks()
   }, [])
 
   if (!tasks) {
@@ -42,7 +42,7 @@ const TasksShow = ({ user, msgAlert }) => {
   //   </li>
   // ))
   const tasksList = tasks.map((task) => (
-    <TaskItem key={task._id} task={task}>
+    <TaskItem fetchTasks={fetchTasks} key={task._id} task={task} user={user} msgAlert={msgAlert}>
     </TaskItem>
   ))
 
