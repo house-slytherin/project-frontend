@@ -1,1 +1,38 @@
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+.item1 {
+  grid-area: menu;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.item2 {
+  grid-area: main;
+}
+.item2 {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 611px 0px;
+  grid-template-areas:
+    "menu main main main main main"
+    "menu main main main main main"
+    "menu footer footer footer footer footer";
+  // background-color: #7cd1b8;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.navbar {
+  flex-direction: column;
+
+  .navbar-nav {
+    flex-direction: column !important;
+  }
+}
