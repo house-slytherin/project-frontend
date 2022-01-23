@@ -63,7 +63,7 @@ class App extends Component {
 	      <main className='container'>
 
 	        <Route
-            path='/'
+            exact path='/'
             render={() => (
               <TaskHome />
             )}
