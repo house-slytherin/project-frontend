@@ -10,7 +10,7 @@
   grid-area: main;
 }
 
-.item2 {
+.item3 {
   grid-area: footer;
 }
 
@@ -18,10 +18,9 @@
   display: grid;
   grid-template-rows: repeat(auto-fit, 100%);
   grid-template-areas:
-    "menu main main main main main"
-    "menu main main main main main"
-    "menu footer footer footer footer footer";
-  // background-color: #7cd1b8;
+    "menu main"
+    "menu main"
+    "menu footer";
 }
 
 .grid-container > div {
@@ -29,4 +28,8 @@
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+}
+
+.container {
+  padding: 0;
 }
