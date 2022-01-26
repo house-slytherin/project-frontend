@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
-import { Spinner } from 'react-bootstrap'
+import { Card, Spinner } from 'react-bootstrap'
 import { indexTasks } from '../../api/tasks'
+import TaskItem from './TaskItem'
 
 const TasksShow = ({ user, msgAlert }) => {
   const [tasks, setTasks] = useState(null)
@@ -11,20 +12,20 @@ const TasksShow = ({ user, msgAlert }) => {
     return <Redirect to='/' />
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await indexTasks(user)
-        setTasks(res.data.tasks)
-      } catch (error) {
-        msgAlert({
-          heading: 'Tasks List failed to load',
-          message: error.message,
-          variant: 'danger'
-        })
-      }
+  const fetchTasks = async () => {
+    try {
+      const res = await indexTasks(user)
+      setTasks(res.data.tasks)
+    } catch (error) {
+      msgAlert({
+        heading: 'Tasks List failed to load',
+        message: error.message,
+        variant: 'danger'
+      })
     }
-    fetchData()
+  }
+  useEffect(() => {
+    fetchTasks()
   }, [])
 
   if (!tasks) {
@@ -35,17 +36,25 @@ const TasksShow = ({ user, msgAlert }) => {
     )
   }
 
+  // const tasksList = tasks.map((task) => (
+  //   <li className={cross ? crossStyle.strikethrough : ''} key={task._id} onClick={() => setCrossOff(true)}>
+  //     <Link to={`/tasks/${task._id}`}>{task.title}</Link>
+  //   </li>
+  // ))
   const tasksList = tasks.map((task) => (
-    <li key={task._id}>
-      <Link to={`/tasks/${task._id}`}>{task.title}</Link>
-    </li>
+    <TaskItem fetchTasks={fetchTasks} key={task._id} task={task} user={user} msgAlert={msgAlert}>
+    </TaskItem>
   ))
 
   return (
     <div className='row'>
       <div className='col-sm-10 col-md-8 mx-auto mt-5'>
         <h3>Tasks</h3>
-        <ul>{tasksList}</ul>
+        <Card>
+          <Card.Body>
+            <ul>{tasksList}</ul>
+          </Card.Body>
+        </Card>
       </div>
     </div>
   )
