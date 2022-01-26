@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../Visuals/Home/Button'
 import video from '../Visuals/videos/backgroundfootage.mp4'
+import '../Visuals/Home/Home.css'
 
 const TaskHome = (props) => {
   if (props.user) {
@@ -11,11 +12,11 @@ const TaskHome = (props) => {
   }
   return (
     <div className='home-container'>
-      <video autoPlay loop muted >
+      <video autoPlay loop muted className='background-video'>
         <source src={video} type = 'video/mp4'/>
       </video>
       <h1>Welcome to Jotit</h1>
-      <p>The place to JOT-IT down</p>
+      <p>The place to JOT IT down</p>
       <div className='home-btns'>
         <Button
           className='btns'
