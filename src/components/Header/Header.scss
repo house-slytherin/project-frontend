@@ -16,13 +16,25 @@
 
     img {
       height: 60%;
+
+      @media screen and (max-width: 425px) {
+        width: 65px;
+      }
     }
 
-    p {
+    p,
+    .navbar-title {
+      font-family: "Coming Soon", cursive, sans-serif;
+      color: white;
       margin-top: 0;
       margin-bottom: 0;
       position: absolute;
       top: 116px;
+
+      @media screen and (max-width: 425px) {
+        top: 57px;
+        font-size: large;
+      }
     }
   }
 
@@ -32,11 +44,27 @@
     .nav-link {
       color: $color-black;
     }
-  }
-}
 
-.navbar-title {
-  font-family: 'Coming Soon', cursive, sans-serif;
-  color: white;
-  padding: 20px;
+    .active {
+      color: $color-teal-tint !important;
+    }
+  }
+
+  .navbar-collapse {
+    @media screen and (max-width: 425px) {
+      background: $color-pale-yellow;
+      padding: 10px;
+      width: 45vw;
+      position: relative;
+      left: 4px;
+    }
+
+    @media screen and (max-width: 375px) {
+      background: $color-pale-yellow;
+      padding: 10px;
+      width: 45vw;
+      position: relative;
+      left: -6px;
+    }
+  }
 }

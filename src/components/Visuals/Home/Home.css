@@ -29,6 +29,12 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 425px) {
+  .home-container {
+    padding: 0 15px;
+  }
+}
+
 .home-container > h1 {
   color: #faedc6;
   font-size: 100px;
@@ -82,7 +88,7 @@
 }
 
 .home-authenticated-header {
-  font-family: 'Coming Soon', cursive, sans-serif;
+  font-family: "Coming Soon", cursive, sans-serif;
   font-weight: bold;
   font-size: 3rem;
   padding: 60px;
@@ -90,7 +96,7 @@
 }
 
 .home-authenticated-main {
-  font-family: 'Coming Soon', cursive, sans-serif;
+  font-family: "Coming Soon", cursive, sans-serif;
   font-weight: bold;
   font-size: 2rem;
   padding: 20px;
