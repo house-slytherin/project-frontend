@@ -3,6 +3,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link, NavLink } from 'react-router-dom'
 
+import './Header.scss'
+
 const authenticatedOptions = (
   <Fragment>
     <NavLink to='/tasks' className='nav-link'>Tasks</NavLink>
@@ -28,9 +30,9 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg='secondary' variant='dark' expand='md'>
+  <Navbar variant='dark' expand='md'>
     <Navbar.Brand>
-      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}><img src='./../../../public/images/jotit_logo_150px.png' /></Link>
+      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}><img src='https://i.imgur.com/KkJhmun.png' /></Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
