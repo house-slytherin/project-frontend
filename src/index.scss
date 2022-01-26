@@ -16,11 +16,13 @@
 
 .grid-container {
   display: grid;
+  grid-template-columns: [zero] 20% [one] 80%;
   grid-template-rows: repeat(auto-fit, 100%);
   grid-template-areas:
     "menu main"
     "menu main"
     "menu footer";
+  min-height: 600px;
 }
 
 .grid-container > div {
