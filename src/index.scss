@@ -16,7 +16,7 @@
 
 .grid-container {
   display: grid;
-  grid-template-rows: 611px 0px;
+  grid-template-rows: repeat(auto-fit, 100%);
   grid-template-areas:
     "menu main main main main main"
     "menu main main main main main"
@@ -30,18 +30,3 @@
   padding: 20px 0;
   font-size: 30px;
 }
-
-// .navbar {
-//   flex-direction: column;
-//   background-color: $color-light-grey;
-
-//   .navbar-brand {
-//     img {
-//       height: 60%;
-//     }
-//   }
-
-//   .navbar-nav {
-//     flex-direction: column !important;
-//   }
-// }

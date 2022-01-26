@@ -32,7 +32,10 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar variant='dark' expand='md'>
     <Navbar.Brand>
-      <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}><img src='https://i.imgur.com/KkJhmun.png' /></Link>
+      <Link to='/' style={{ textDecoration: 'none' }}>
+        <img src='https://i.imgur.com/KkJhmun.png' />
+        <p>Jotit</p>
+      </Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
     <Navbar.Collapse id='basic-navbar-nav'>
