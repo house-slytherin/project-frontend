@@ -4,6 +4,11 @@ import { Spinner, Button } from 'react-bootstrap'
 
 import { deleteTask, showTask } from '../../api/tasks'
 
+import TaskDate from './TaskDate'
+import './TaskDelete.css'
+
+import Background from '../Visuals/images/pencil_background.jpg'
+
 const TaskDelete = ({ user, msgAlert }) => {
   const [task, setTask] = useState(null)
   const [deleted, setDeleted] = useState(false)
@@ -60,14 +65,22 @@ const TaskDelete = ({ user, msgAlert }) => {
   } else {
     // We have a Task, display it!
     return (
-      <div className='row'>
-        <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-          <h3>{task.title}</h3>
-          <p>Description: {task.description}</p>
-          <Button variant='danger' onClick={handleDeleteClick}>Delete Task</Button>
-          <Link to={`/tasks/${id}/edit`}>
-            <Button variant='primary' type='submit'>Update Task</Button>
-          </Link>
+      <div className='task-delete'>
+        <img className='background-image' src={Background} />
+        <div className='row'>
+          <div className='col-sm-10 col-md-8 mx-auto mt-5'>
+            <div>
+              <TaskDate date={task.date}></TaskDate>
+            </div>
+            <h2 className='task-item-title'>{task.title}</h2>
+            <p className='task-delete-description'>{task.description}</p>
+            <Button variant='danger' onClick={handleDeleteClick}>Delete Task
+            </Button>
+            <Link to={`/tasks/${id}/edit`}>
+              <Button variant='warning' type='submit'>Update Task
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     )

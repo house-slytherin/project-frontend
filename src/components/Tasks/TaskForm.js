@@ -16,7 +16,7 @@ const TaskForm = ({ handleSubmit, title, description, date, setTitle, setDescrip
     <Form.Group controlId='description'>
       <Form.Label>Description</Form.Label>
       <Form.Control
-        placeholder='A Description'
+        placeholder='e.g. not get covid this week'
         name='description'
         value={description}
         onChange={event => setDescription(event.target.value)}
@@ -33,7 +33,7 @@ const TaskForm = ({ handleSubmit, title, description, date, setTitle, setDescrip
         onChange={event => setDate(event.target.value)}
       />
     </Form.Group>
-    <Button className='mt-2' variant='primary' type='submit'>Submit</Button>
+    <Button className='mt-2' variant='warning' type='submit'>Submit</Button>
   </Form>
 )
 

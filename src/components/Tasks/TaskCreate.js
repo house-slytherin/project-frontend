@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom'
 // Import MovieForm:
 import TaskForm from './TaskForm'
 import { createTask } from '../../api/tasks'
+import Background from '../Visuals/images/pencil_background.jpg'
 
 const TaskCreate = ({ user, msgAlert }) => {
   const [title, setTitle] = useState('')
@@ -43,7 +44,8 @@ const TaskCreate = ({ user, msgAlert }) => {
   return (
     <div className='row'>
       <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-        <h3>Create Task</h3>
+        <img className='background-image' src={Background} />
+        <h3 className='tasks-text'>Create Task</h3>
         <TaskForm
           handleSubmit={handleSubmit}
           title={title}

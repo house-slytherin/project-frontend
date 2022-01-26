@@ -6,6 +6,7 @@ import { changePasswordSuccess, changePasswordFailure } from '../AutoDismissAler
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Background from '../Visuals/images/pencil_background.jpg'
 
 class ChangePassword extends Component {
   constructor (props) {
@@ -52,7 +53,8 @@ render () {
   return (
     <div className='row'>
       <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-        <h3>Change Password</h3>
+        <img className='background-image' src={Background} />
+        <h3 className='tasks-text'>Change Password</h3>
         <Form onSubmit={this.onChangePassword}>
           <Form.Group controlId='oldPassword'>
             <Form.Label>Old password</Form.Label>
@@ -76,7 +78,7 @@ render () {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button variant='primary' type='submit'>Submit</Button>
+          <Button className='mt-2' variant='warning' type='submit'>Submit</Button>
         </Form>
       </div>
     </div>

@@ -9,7 +9,7 @@ const authenticatedOptions = (
   <Fragment>
     <NavLink to='/tasks' className='nav-link'>Tasks</NavLink>
     <NavLink to='/tasks/create' className='nav-link'>
-      Create A Task
+      Create Task
     </NavLink>
     <NavLink to='/change-password' className='nav-link'>Change Password</NavLink>
     <NavLink to='/sign-out' className='nav-link'>Sign Out</NavLink>
@@ -34,7 +34,7 @@ const Header = ({ user }) => (
     <Navbar.Brand>
       <Link to='/' style={{ textDecoration: 'none' }}>
         <img src='https://i.imgur.com/KkJhmun.png' />
-        <p>Jotit</p>
+        <p className='navbar-title'>Jotit</p>
       </Link>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls='basic-navbar-nav' />
