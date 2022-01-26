@@ -10,7 +10,7 @@ Have a task you need to complete? Jotit down! This application allows the user t
 
 ### User Stories
 
-### MVP
+#### MVP
 
 - As an unregistered user, I would like to sign up with email and password.
 - As a registered user, I would like to sign in with email and password.
@@ -22,7 +22,7 @@ Have a task you need to complete? Jotit down! This application allows the user t
 - As a signed in user, I would like to cross off items to complete them.
 - As a signed in user, I would like to delete my task item.
 
-### Reach Goals
+#### Reach Goals
 
 - As a signed in user, I would like to search for a location to add to a task.
 - As a signed in user, I would like to record an audio message for a task.

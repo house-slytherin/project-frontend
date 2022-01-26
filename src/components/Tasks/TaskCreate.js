@@ -18,7 +18,6 @@ const TaskCreate = ({ user, msgAlert }) => {
     try {
       const res = await createTask(title, description, new Date(date), user)
       setCreatedId(res.data.task._id)
-      console.log(res.data.task._id)
 
       msgAlert({
         heading: 'Task Created',
