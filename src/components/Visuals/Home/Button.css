@@ -1,5 +1,11 @@
 :root {
   --primary: #3e8e7e;
+  --color-teal: #7cd1b8;
+  --color-golden: #fabb51;
+  --color-pale-yellow: #faedc6;
+  --color-light-grey: #cbcbcb;
+  --color-black: #000000;
+  --color-white: #ffffff;
 }
 
 .btn {
@@ -18,9 +24,9 @@
 
 .btn--outline {
   background-color: transparent;
-  color: #7cd1bb;
+  color: #fabb51;
   padding: 8px 20px;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--color-golden);
   transition: all 0.3s ease-out;
 }
 
