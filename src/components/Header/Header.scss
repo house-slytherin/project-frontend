@@ -2,7 +2,7 @@
 
 .navbar {
   flex-direction: column;
-  background-color: $color-light-grey;
+  background-color: #fabb51;
 
   .navbar-brand {
     a {
@@ -33,4 +33,10 @@
       color: $color-black;
     }
   }
+}
+
+.navbar-title {
+  font-family: 'Coming Soon', cursive, sans-serif;
+  color: white;
+  padding: 20px;
 }

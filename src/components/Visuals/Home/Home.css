@@ -80,3 +80,19 @@
     width: 100%;
   }
 }
+
+.home-authenticated-header {
+  font-family: 'Coming Soon', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 60px;
+  text-align: center;
+}
+
+.home-authenticated-main {
+  font-family: 'Coming Soon', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 20px;
+  text-align: center;
+}

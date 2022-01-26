@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 
-import { Card, Spinner } from 'react-bootstrap'
+import { Spinner } from 'react-bootstrap'
 import { indexTasks } from '../../api/tasks'
 import TaskItem from './TaskItem'
+import './TaskItem.css'
+import Background from '../Visuals/images/pencil_background.jpg'
 
 const TasksShow = ({ user, msgAlert }) => {
   const [tasks, setTasks] = useState(null)
@@ -42,19 +44,20 @@ const TasksShow = ({ user, msgAlert }) => {
   //   </li>
   // ))
   const tasksList = tasks.map((task) => (
-    <TaskItem fetchTasks={fetchTasks} key={task._id} task={task} user={user} msgAlert={msgAlert}>
-    </TaskItem>
+    <TaskItem
+      fetchTasks={fetchTasks}
+      key={task._id}
+      task={task}
+      user={user}
+      msgAlert={msgAlert}></TaskItem>
   ))
 
   return (
     <div className='row'>
       <div className='col-sm-10 col-md-8 mx-auto mt-5'>
-        <h3>Tasks</h3>
-        <Card>
-          <Card.Body>
-            <ul>{tasksList}</ul>
-          </Card.Body>
-        </Card>
+        <img className='background-image' src={Background} />
+        <h3 className='tasks-text'>My Tasks</h3>
+        <ul>{tasksList}</ul>
       </div>
     </div>
   )

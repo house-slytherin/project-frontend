@@ -2,12 +2,15 @@ import React from 'react'
 import Button from '../Visuals/Home/Button'
 import video from '../Visuals/videos/backgroundfootage.mp4'
 import '../Visuals/Home/Home.css'
+import Background from '../Visuals/images/pencil_background.jpg'
 
 const TaskHome = (props) => {
   if (props.user) {
     return (<>
-      <h1> hey your a user! </h1>
-      <p>no button</p>
+      <img className='background-image' src={Background} />
+      <h1 className='home-authenticated-header'> Welcome to Jotit! </h1>
+      <p className='home-authenticated-main'>Keep track of all your tasks. Click Create Task to start a list.
+      </p>
     </>)
   }
   return (
