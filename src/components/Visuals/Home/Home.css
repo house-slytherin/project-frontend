@@ -1,21 +1,29 @@
-video {
-  object-fit: cover;
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
-  position: fixed;
-  z-index: -1;
+  object-fit: cover;
+  overflow: auto;
+  z-index: -2;
 }
 
 .home-container {
   /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
-  height: 100vh;
+  object-fit: cover;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
-  object-fit: contain;
+  /* box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain; */
   font-family: 'Nothing You Could Do', cursive;
 }
 
@@ -29,7 +37,7 @@ video {
   margin-top: 8px;
   color: #faedc6;
   font-size: 32px;
-  font-family: 'Caveat', cursive;
+  font-family: 'Nothing You Could Do', cursive;
 }
 
 .home-btns {
