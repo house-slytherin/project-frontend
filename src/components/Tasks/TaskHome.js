@@ -1,9 +1,14 @@
 import React from 'react'
 import Button from '../Visuals/Home/Button'
-import '../Visuals/Home/Home.css'
-import video from '../../videos/backgroundfootage.mp4'
+import video from '../Visuals/videos/backgroundfootage.mp4'
 
-const TaskHome = () => {
+const TaskHome = (props) => {
+  if (props.user) {
+    return (<>
+      <h1> hey your a user! </h1>
+      <p>no button</p>
+    </>)
+  }
   return (
     <div className='home-container'>
       <video autoPlay loop muted >
