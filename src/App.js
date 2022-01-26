@@ -64,11 +64,11 @@ class App extends Component {
 	      <main className='container'>
 
 	        <Route
-              path='/'
-              render={() => (
-                <TaskHome />
-              )}
-            />
+            exact path='/'
+            render={() => (
+              <TaskHome user={user}/>
+            )}
+          />
 	        <Route
               path='/sign-up'
               render={() => (
