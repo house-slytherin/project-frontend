@@ -8,7 +8,7 @@ Have a task you need to complete? Jotit down! This application allows the user t
 - [Deployed API]()
 - [API Repository](https://github.com/house-slytherin/express-api)
 
-### User Stories
+## User Stories
 
 ### MVP
 
@@ -49,4 +49,4 @@ After deciding on an app idea and title, we developed a team scrum plan and crea
 
 ### Wireframes 
 
-![Wireframes]('./Visuals/images/Jotit_wireframes.png')
+![Wireframes]('../Visuals/images/Jotit_wireframes.png')
