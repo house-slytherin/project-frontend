@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/project-frontend/static/css/main.853114c1.chunk.css",
+    "main.js": "/project-frontend/static/js/main.cdd7edb7.chunk.js",
+    "main.js.map": "/project-frontend/static/js/main.cdd7edb7.chunk.js.map",
+    "runtime-main.js": "/project-frontend/static/js/runtime-main.40dfcfd8.js",
+    "runtime-main.js.map": "/project-frontend/static/js/runtime-main.40dfcfd8.js.map",
+    "static/js/2.d0aa50c9.chunk.js": "/project-frontend/static/js/2.d0aa50c9.chunk.js",
+    "static/js/2.d0aa50c9.chunk.js.map": "/project-frontend/static/js/2.d0aa50c9.chunk.js.map",
+    "index.html": "/project-frontend/index.html",
+    "static/css/main.853114c1.chunk.css.map": "/project-frontend/static/css/main.853114c1.chunk.css.map",
+    "static/js/2.d0aa50c9.chunk.js.LICENSE.txt": "/project-frontend/static/js/2.d0aa50c9.chunk.js.LICENSE.txt",
+    "static/media/backgroundfootage.131ab8a2.mp4": "/project-frontend/static/media/backgroundfootage.131ab8a2.mp4",
+    "static/media/pencil_background.87c8c715.jpg": "/project-frontend/static/media/pencil_background.87c8c715.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.40dfcfd8.js",
+    "static/js/2.d0aa50c9.chunk.js",
+    "static/css/main.853114c1.chunk.css",
+    "static/js/main.cdd7edb7.chunk.js"
+  ]
+}
